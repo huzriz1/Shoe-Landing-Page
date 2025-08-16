@@ -1,103 +1,152 @@
+import Herosection from "./components/Herosection";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import Image from "next/image";
-
+import CallToAction from "./components/CallToAction";
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <Herosection />
+      {/* Page 2: Key Features Section */}
+      <div id="key-feature" className="mt-5 pt-5 h-auto bg-primary text-primary-foreground p-8 ] ">
+        <div className="bg-white/0 backdrop-blur-md rounded-lg p-6 shadow-lg">
+          <h2 className="
+          text-3xl font-bold mb-4 text-center 
+          ">Key Features</h2>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <div className="flex flex-col md:grid grid-cols-2 grid-rows-2 gap-10 p-2 mt-4 m-2">
+          <div className="transform transition duration-500 hover:scale-110 hover:z-20">
+            <Card
+              className={
+                "bg-white/0 backdrop-blur-md rounded-lg  shadow-lg text-primary-foreground font-semibold"
+              }
+            >
+              <CardHeader>
+               <div className="icon">
+                <Image
+                  src="/shoes.png"
+                  alt="Shoe Icon"
+                  width={50}
+                  height={50}
+                  className="mx-auto mb-4"
+                />
+               </div>
+                  
+                <CardTitle className={" text-center"}>
+                  Ultimate Comfort.
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  Every step is a new experience. Our shoes are engineered with
+                  a cushioned insole and a shock-absorbing sole, providing
+                  all-day comfort without compromising on style. Walk, run, or
+                  stand—your feet will thank you.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="transform transition duration-500 hover:scale-110 hover:z-20">
+            <Card
+              className={
+                "bg-white/0 backdrop-blur-md rounded-lg  shadow-lg text-primary-foreground font-semibold"
+              }
+            >
+              <div className="icon">
+                <Image
+                  src="/sneakers.png"
+                  alt="Shoe Icon"
+                  width={50}
+                  height={50}
+                  className="mx-auto mb-4"
+                />
+               </div>
+              <CardHeader>
+                <CardTitle className={"text-center"}>Premium Quality</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  Crafted with meticulous attention to detail. From the finest
+                  leather to durable synthetic blends, every material is
+                  handpicked to ensure longevity and a luxurious feel. Our
+                  commitment to quality means your shoes will not only look
+                  great but last for years.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="transform transition duration-500 hover:scale-110 hover:z-20">
+            <Card
+              className={
+                "bg-white/0 backdrop-blur-md rounded-lg shadow-lg text-primary-foreground font-semibold"
+              }
+            >
+              <div className="icon">
+                <Image
+                  src="/running-shoe.png"
+                  alt="Shoe Icon"
+                  width={50}
+                  height={50}
+                  className="mx-auto mb-4"
+                />
+               </div>
+              <CardHeader>
+                <CardTitle className={"text-center"}>
+                  Featherlight Feel
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  Say goodbye to heavy footwear. We've used advanced,
+                  lightweight materials to craft shoes that feel like you're
+                  walking on air. The perfect blend of durability and comfort,
+                  so you can move freely and effortlessly.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="transform transition duration-500 hover:scale-110 hover:z-20">
+            <Card
+              className={
+                "bg-white/0 backdrop-blur-md rounded-lg shadow-lg text-primary-foreground font-semibold"
+              }
+            >
+              <div className="icon">
+                <Image
+                  src="/boot.png"
+                  alt="Shoe Icon"
+                  width={50}
+                  height={50}
+                  className="mx-auto mb-4"
+                />
+               </div>
+              <CardHeader>
+                <CardTitle className={"text-center"}>Weatherproof</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  Don't let the weather dictate your style. Our water-resistant
+                  coating protects your shoes from rain and spills, ensuring
+                  they stay clean and dry. Step out with confidence, no matter
+                  the forecast.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+      <div className="w-full h-px bg-primary-foreground my-8 opacity-30"></div>
+      {/* Call to Action Section */}
+     
+      <CallToAction />
     </div>
   );
 }
