@@ -119,8 +119,8 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p>
-                  Say goodbye to heavy footwear. We've used advanced,
-                  lightweight materials to craft shoes that feel like you're
+                  Say goodbye to heavy footwear. We&apos;ve used advanced,
+                  lightweight materials to craft shoes that feel like you&apos;re
                   walking on air. The perfect blend of durability and comfort,
                   so you can move freely and effortlessly.
                 </p>
@@ -150,7 +150,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p>
-                  Don't let the weather dictate your style. Our water-resistant
+                  Don&apos;t let the weather dictate your style. Our water-resistant
                   coating protects your shoes from rain and spills, ensuring
                   they stay clean and dry. Step out with confidence, no matter
                   the forecast.
