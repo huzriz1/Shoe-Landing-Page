@@ -1,7 +1,6 @@
 "use client";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
-import { useInView } from "framer-motion";
 
 export default function RevealFadeUp({ children, delay = 0.15 }) {
   const ref = useRef(null);
@@ -9,7 +8,9 @@ export default function RevealFadeUp({ children, delay = 0.15 }) {
   const controls = useAnimation();
 
   useEffect(() => {
-    if (inView) controls.start("visible");
+    if (inView) {
+      controls.start("visible");
+    }
   }, [inView, controls]);
 
   return (

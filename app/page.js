@@ -13,8 +13,10 @@ import Image from "next/image";
 import CallToAction from "./components/CallToAction";
 import  Reveal  from "./components/Reveal";
 import RevealFadeUp from "./components/RevealFadeUp";
-import RevealSlideLeft from "./components/RevealSlideLeft";
-import RevealSlideRight from "./components/RevealSlideRight";
+import RevealBlur from "./components/RevealBlur";
+import dynamic from "next/dynamic";
+
+
 export default function Home() {
 
   return (
@@ -27,12 +29,19 @@ export default function Home() {
       <div id="key-feature" className="mt-5 pt-5 h-auto bg-primary text-primary-foreground p-8 ] ">
         <div className="bg-white/0 backdrop-blur-md rounded-lg p-6 shadow-lg">
           <h2 className="
-          text-3xl font-bold mb-4 text-center 
+          text-3xl font-bold mb-4 text-center transition-all duration-300
+            hover:text-transparent
+            hover:bg-clip-text
+            hover:bg-gradient-to-r
+            hover:from-yellow-400
+            hover:via-pink-500
+            hover:to-red-500
+            cursor-pointer
           ">Key Features</h2>
         </div>
 
         <div className="flex flex-col md:grid grid-cols-2 grid-rows-2 gap-10 p-2 mt-4 m-2">
-        <RevealSlideLeft>
+          <RevealBlur>
           <div className="transform transition duration-500 hover:scale-110 hover:z-20">
             <Card
               className={
@@ -64,8 +73,8 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-          </RevealSlideLeft>
-         <RevealSlideRight>
+          </RevealBlur>
+<RevealBlur>
           <div className="transform transition duration-500 hover:scale-110 hover:z-20">
             <Card
               className={
@@ -95,8 +104,8 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-</RevealSlideRight>
-<RevealSlideLeft>
+          </RevealBlur>
+          <RevealBlur>
           <div className="transform transition duration-500 hover:scale-110 hover:z-20">
             <Card
               className={
@@ -127,9 +136,8 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-
-</RevealSlideLeft>
-<RevealSlideRight>
+          </RevealBlur>
+<RevealBlur>
           <div className="transform transition duration-500 hover:scale-110 hover:z-20">
             <Card
               className={
@@ -158,7 +166,8 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-</RevealSlideRight>
+          </RevealBlur>
+
 
         </div>
       </div>
@@ -168,6 +177,7 @@ export default function Home() {
      <RevealFadeUp>
       <CallToAction />
       </RevealFadeUp>
+      
     </div>
   );
 }

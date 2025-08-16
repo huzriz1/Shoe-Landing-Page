@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import { Poppins } from 'next/font/google'
 import Footer from "./components/Footer";
 
-import RevealSlideLeft from "./components/RevealSlideLeft";
+import RevealFadeUp from "./components/RevealFadeUp";
 
 
 const poppins = Poppins({
@@ -37,13 +37,17 @@ export default function RootLayout({ children }) {
             disableTransitionOnChange
           >
           
-     <RevealSlideLeft>
+     <RevealFadeUp>
           <Navbar />
-  </RevealSlideLeft>
+          </RevealFadeUp>
+  <RevealFadeUp>
         {children}
-<RevealSlideLeft>
+        </RevealFadeUp>
+
+<RevealFadeUp>
       <Footer />
-   </RevealSlideLeft>
+      </RevealFadeUp>
+ 
         </ThemeProvider>
       </body>
     </html>

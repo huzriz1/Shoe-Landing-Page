@@ -1,15 +1,16 @@
 "use client";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
-import { useInView } from "framer-motion";
 
-export default function RevealSlideLeft({ children, delay = 0.15 }) {
+export default function RevealBlur({ children, delay = 0.15 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
   const controls = useAnimation();
 
   useEffect(() => {
-    if (inView) controls.start("visible");
+    if (inView) {
+      controls.start("visible");
+    }
   }, [inView, controls]);
 
   return (
@@ -17,10 +18,10 @@ export default function RevealSlideLeft({ children, delay = 0.15 }) {
       ref={ref}
       initial="hidden"
       animate={controls}
-      transition={{ duration: 0.8, delay, ease: [0.4, 0, 0.2, 1] }}
+      transition={{ duration: 0.8, delay, ease: "easeOut" }}
       variants={{
-        hidden: { opacity: 0, x: -80 },
-        visible: { opacity: 1, x: 0 },
+        hidden: { opacity: 0, filter: "blur(12px)" },
+        visible: { opacity: 1, filter: "blur(0px)" },
       }}
     >
       {children}
