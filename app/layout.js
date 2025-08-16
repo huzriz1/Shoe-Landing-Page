@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import { Poppins } from 'next/font/google'
 import Footer from "./components/Footer";
 
+import RevealSlideLeft from "./components/RevealSlideLeft";
+
 
 const poppins = Poppins({
   weight: ['400', '600', '700'],
@@ -35,10 +37,13 @@ export default function RootLayout({ children }) {
             disableTransitionOnChange
           >
           
-            
+     <RevealSlideLeft>
           <Navbar />
+  </RevealSlideLeft>
         {children}
+<RevealSlideLeft>
       <Footer />
+   </RevealSlideLeft>
         </ThemeProvider>
       </body>
     </html>

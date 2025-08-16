@@ -8,7 +8,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className='bg-primar  fixed top-0 w-full z-50 text-primary-foreground  flex justify-between items-center bg-white/0 backdrop-blur-md rounded-lg p-6 shadow-lg '>
+    <nav className='bg-primar   top-0 w-full z-50 text-primary-foreground  flex justify-between items-center bg-white/0 backdrop-blur-md rounded-lg p-6 shadow-lg '>
       <div className="logo z-20">
         <h1 className='text-2xl font-extrabold'>Elysian <span className='font-bold'>Kicks</span></h1>
       </div>

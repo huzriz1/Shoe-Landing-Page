@@ -1,3 +1,4 @@
+"use client";
 import Herosection from "./components/Herosection";
 import {
   Card,
@@ -10,11 +11,19 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import CallToAction from "./components/CallToAction";
+import  Reveal  from "./components/Reveal";
+import RevealFadeUp from "./components/RevealFadeUp";
+import RevealSlideLeft from "./components/RevealSlideLeft";
+import RevealSlideRight from "./components/RevealSlideRight";
 export default function Home() {
+
   return (
     <div>
+     <Reveal>
       <Herosection />
+      </Reveal>
       {/* Page 2: Key Features Section */}
+      <Reveal>
       <div id="key-feature" className="mt-5 pt-5 h-auto bg-primary text-primary-foreground p-8 ] ">
         <div className="bg-white/0 backdrop-blur-md rounded-lg p-6 shadow-lg">
           <h2 className="
@@ -23,6 +32,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col md:grid grid-cols-2 grid-rows-2 gap-10 p-2 mt-4 m-2">
+        <RevealSlideLeft>
           <div className="transform transition duration-500 hover:scale-110 hover:z-20">
             <Card
               className={
@@ -54,6 +64,8 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
+          </RevealSlideLeft>
+         <RevealSlideRight>
           <div className="transform transition duration-500 hover:scale-110 hover:z-20">
             <Card
               className={
@@ -83,6 +95,8 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
+</RevealSlideRight>
+<RevealSlideLeft>
           <div className="transform transition duration-500 hover:scale-110 hover:z-20">
             <Card
               className={
@@ -113,6 +127,9 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
+
+</RevealSlideLeft>
+<RevealSlideRight>
           <div className="transform transition duration-500 hover:scale-110 hover:z-20">
             <Card
               className={
@@ -141,12 +158,16 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
+</RevealSlideRight>
+
         </div>
       </div>
+      </Reveal>
       <div className="w-full h-px bg-primary-foreground my-8 opacity-30"></div>
-      {/* Call to Action Section */}
-     
+      
+     <RevealFadeUp>
       <CallToAction />
+      </RevealFadeUp>
     </div>
   );
 }
